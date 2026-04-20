@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الذكريات  </title>
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		background: linear-gradient(135deg, #ffeef8, #ffeec6);
+		min-height: 100vh;
+		font-family: 'segoe UI', Tahome, Geneva, verdana, sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow-x: hidden;
+	}
+	.section{
+		display: none;
+		width:100%;
+		text-align: center;
+		animation: fadiIn 0.8s ease;
+	}
+	.active {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	@keyframes {
+		from{
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to{
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	.glass-card {
+		background: rgba(255, 255, 255, 0.7);
+		backdrop-filter: blur(15px);
+		padding: 40px;
+		border-radius: 30px;
+		box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+		border:1px solid rgba(255, 255, 255, 0.4);
+		max-width: 500px;
+		margin: 20px;
+	}
+	.fancy-btn {
+		background: #ff69b4;
+		color: white;
+		border:none;
+		padding: 15px 40px;
+		border-radius: 50px;
+		font-size: 18px;
+		font-weight: bold;
+		cursor: pointer;
+		transition: 0.4s;
+		box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+		margin-top: 20px;
+	}
+	.fancy-btn:hover {
+		transform: scale(1.1) rotate(2deg);
+		background: #ff4da6;
+		box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+	}
+	input{
+		padding: 12px;
+		border-radius: 10px;
+		border: 1px solid #ffb3d9;
+		text-align: center;
+		font-size: 18px;
+		margin-bottom: 10px;
+		outline: none;
+
+	}
+
+	
+	.memory-card {
+		display: flex;
+		background: white;
+		align-items: center;
+		margin: 30px auto;
+		padding: 15px;
+		border-radius: 25px;
+		max-width: 700px;
+		cursor: pointer;
+		transition: 0.5 ease-in-out;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	}
+	.memory-card img{
+		width: 250px;
+		height: auto;
+		max-height: 400px;
+		object-fit: cover;
+		border-radius: 20px;
+		transition: 0.5s;
+	}
+	.side-text {
+		max-width: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+		font-size: 20px;
+		color: #d81b60;
+		text-align: right;
+		font-weight: 500;
+	}
+	.revealed {
+		transform: scale(1.02);
+		box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+
+	}
+	.revealed .side-text {
+		max-width: 450px;
+		opacity: 1;
+		padding: 25px;
+
+	}
+	.love-text {
+		font-size: 22px;
+		line-height: 1.6;
+		color: #ad1457;
+	}
+	.title {
+		color: #ff1493;
+		margin-bottom: 30px;
+		font-size: 35px;
+	}
+</style>
+	</head>
+		<body></body>
+            			<div id="p1" class="section active">
+				<div class="glass-card">
+					<h2 style="color:#ff69b4;">
+						ازيك يا كوكي 
+					</h2>
+					<p style="color:#888;"> 
+						دخلي اكتر تاريخ مميز لينا
+					</p>
+					<input type="text" id="passInput" password="29/7/2021">
+						<br>
+						<button class="fancy-btn" onclick="cp()">
+							يلا بينا
+						</button>
+					</div>
+				</div>
+					<div id="p2" class="section">
+						<div class="glass-card">
+							<p class="love-text">
+								دايماً بحب هديتي تكون مختلفه 
+								<br>
+								فقررت اني اعملك الويب ده و تكون هديه صغيره لحد ما اجبلك الهديه الكبيره 
+								<br>
+								دي حبه من ذكرياتنا مع بعض و كل صوره ليها الوصف بتاعها و اتصورت ازاي + أغنيه تسمعيها ونتي بتتفرجي علي صورنا.
+								<br><br>
+								أنتي اجمل صدفه في حياتي 
+							</p>
+							<button class="fancy-btn"
+							onclick="nextpage('p2', 'p3')">
+							دوسي هنا يعمري
+						</button>
+					</div>
+				</div>
+				<div id="p3" class="section">
+					<h2 class="title">
+						حكايتنا بإختصار 
+					</h2>
+					<p>شغلي الدقيقه 1:25</p>
+					<video id="love" width="45%"
+					style=
+					"border-radius: 20px;
+					margin-bottom:20px;"
+					controls>
+					<source src="mex.mp4" type="video/mp4">
+					</video>
+					<div style="padding: 20px;">
+						<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="s.jpg" alt="صورتنا">
+							<div class="side-text">
+								اخر كول بينا كنت نايم و انتي مقفلتيش
+							</div>
+						</div>
+
+
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="maktp.jpg" alt="صورتنا">
+							<div class="side-text">
+								كنت مطبق و بموت بس مهنش عليا مشوفكيش 
+								
+							</div>
+						</div>
+	
+
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="akl.jpg" alt="صورتنا">
+							<div class="side-text">
+								انا جوعت فقولت احط دي 
+								<br>
+								لا بهزر خلاص!
+								<br>
+								دي لما كنتي خارجه من الكليه و جبتلك اكل 
+							</div>
+						</div>
+	
+
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="sh.jpg" alt="صورتنا">
+							<div class="side-text">
+								هنا لما كان ابن خالتك مكفرنييي
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="play.jpg" alt="صورتنا">
+							<div class="side-text">
+								دا كان يوم ميتنسيش 
+								<br>
+								تقريبا الكل زعل مننا بس احنا اتبسطنا
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="gsm.jpg" alt="صورتنا">
+							<div class="side-text">
+								هنا كنتي خارجه من  درسك تقريبا و اتصورنا 
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="adna.jpg" alt="صورتنا">
+							<div class="side-text">
+								هنا لما كنت نايم و قولتيلي انزلي  عشان واحشني
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="toka.jpg" alt="صورتنا">
+							<div class="side-text">
+								اول صوره اخدتها بعد ما لساني دلدل علي التوكه
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="nady.jpg" alt="صورتنا">
+							<div class="side-text">
+								كل مره برجع فيها من النادي ببقي لازم اشوفك
+								<br>
+								ف باجي تحت البلاكونه و تطلعيلي
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="bnty.jpg" alt="صورتنا">
+							<div class="side-text">
+								دي اكتر صوره لما بشوفها بتاكد اني بحبك 
+								<br>
+								الصوره دي مسميها بنتي 
+							</div>
+						</div>
+	
+
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="mask.jpg" alt="صورتنا">
+							<div class="side-text">
+								اليوم ده كان عيد ميلادي و كان الساعه 7 الصبح في الروم 
+							</div>
+						</div>
+
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="uber.jpg" alt="صورتنا">
+							<div class="side-text">
+								هنا كنا بنبدأ يوم عيد ميلادك
+							</div>
+						</div>
+	
+
+	
+	
+
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="3in.jpg" alt="صورتنا">
+							<div class="side-text">
+								التيشرت  ده كان معمول مخصوص ليوم عيد ميلادك
+								<br>
+								مش اي تيشرت دا عليه عيونك !
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="gamda.jpg" alt="صورتنا">
+							<div class="side-text">
+								قبل ما اسافر شرم كنت حابب اخر حاجه اشوفها تبقي انتي 
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="3bs.jpg" alt="صورتنا">
+							<div class="side-text">
+								دي كانت اعبث صوره اليوم ده 
+							</div>
+						</div>
+	
+
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="7amo.jpg" alt="صورتنا">
+							<div class="side-text">
+								كنا كنت بغيظ حليم عشان كرفتله و سبته علي القهوه و جتلك
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="call.jpg" alt="صورتنا">
+							<div class="side-text">
+								هنا لما سافرت و كنتي بتوحشيني كنت بكلمك 
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="ssssss.jpg" alt="صورتنا">
+							<div class="side-text">
+								الصوره دي كانت يوم 29/7/2025
+								<br>
+								خامس سنه لينا مع بعض و كنا بنتحتفل بيها
+							</div>
+						</div>
+	
+
+	
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="mask2.jpg" alt="صورتنا">
+							<div class="side-text">
+								نفس الكلام
+							</div>
+						</div>
+	
+
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="z3t.jpg" alt="صورتنا">
+							<div class="side-text">
+								دا انا و زعتر عادي
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="karfor.jpg" alt="صورتنا">
+							<div class="side-text">
+								يوم السبت 14/10/2021
+								<br>
+								اليوم دا قابلناكم بعد عيد ميلادك بأربع أيام
+							</div>
+						</div>
+	
+
+	
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="hop.jpg" alt="صورتنا">
+							<div class="side-text">
+								ده بقا يا ساده اول يوم حبيتك فيه 
+								<br>
+								اول بحبك اتقالت و اول ما قلبي شاف كان شايفك 
+								<br>
+								يوم 29/7/2021
+							</div>
+						</div>
+	
+
+	
+									<div class="memory-card" onclick="this.classList.toggle('revealed')">
+							<img src="3id.jpg" alt="صورتنا">
+							<div class="side-text">
+								دي اخر صوره لينا 
+								<br>
+								العيد الي فات 
+								<br>
+								حبيت احطها الاخيره عشان تشوفي السنين الي قضيناها سوا 
+								<br>
+								يوم20/3/2026
+							</div>
+						</div>
+	
+
+					
+	
+	
+	
+	
+	
+
+
+</div>
+
+
+<button class="fancy-btn" onclick="nextpage('p3','p4')">
+	اخر حاجه 
+</button>
+</div>
+	
+		<div id="p4" class="section">
+			<div class="glass-card">
+				<h2 style="color:#ff1493;">
+					بعد ما سهرت علي الويب ده احب اقولك 
+				</h2>
+					<p class="love-text">
+						ان دي مش مجرد صور 
+						<br>
+						دي رحله عشناها سوا 
+						<br>
+						سواء حلو او وحش كنا مع بعض ، مفكرناش نبعد 
+						<br>
+						كنا دايما مع بعض ، و هنفضل مع بعض لأخر العمر 
+						<br>
+						زي ما بدأناها سوا هننهيها سوا يا حبيبتي .
+					</p>
+                    <h3 class="love-text">  بحبك يا قمرتي  </h3>
+					<button class="fancy-btn" onclick="lr()">
+						لو عايزه ترجعي من الاول 
+					</button>
+				
+				</div>
+			</div>
+			<script>
+		
+				function cp() {
+					const pass = document.getElementById('passInput').value;
+					if (pass === "29/7/2021")	{
+						nextpage('p1','p2')
+					}
+					else {
+						alert("ركزي يعمري التاريخ غلط")
+					}
+				}
+
+				function nextpage(currentId, nextId){
+					document.getElementById(currentId).classList.remove('active');
+					document.getElementById(nextId).classList.add('active');
+					if (nextId ==='p3') {
+						const video=
+						document.getElementById('love');
+						video.play();
+					}
+				}
+                function lr() {
+                    document.getElementById('p4').classList.remove('active');
+                    document.getElementById('p1').classList.add('active');
+                }
+
+			</script>
+		</body>
+		</html>
+
+
+
